@@ -6,6 +6,10 @@ block content
     div(class= "container-fluid")
         div(class = "row")  
             each item, index in results  
-                div(class= "col-sm-2", onclick=`results(${index})`) AccountNumber:  #{item.AccountNumber}       
-                div(class= "col-sm-2", onclick=`results(${index})`) AccountType:  #{item.AccountType}   
-                div(class= "col-sm-2", onclick=`results(${index})`) AccountHolder:   #{item.AccountHolder}
+                div(class= "col-sm-2", onclick=`account(${index})`) AccountNumber:  #{item.AccountNumber}       
+                div(class= "col-sm-2", onclick=`account(${index})`) AccountType:  #{item.AccountType}   
+                div(class= "col-sm-2", onclick=`account(${index})`) AccountHolder:   #{item.AccountHolder}
+    script.
+        function account(itemNum){
+        alert(`You purchased item ${itemNum+1}`)
+        }
