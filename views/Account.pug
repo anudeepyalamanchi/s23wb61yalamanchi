@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
- 
+    h1= title
+    -let results   = [{"AccountNumber": "1234", "AccountType": "SAVING", "AccountHolder": "Anudeep",}, { "AccountNumber": "2345", "AccountType": "JOINT", "AccountHolder": "Mintu",}, {"AccountNumber": "3456", "AccountType": "CURRENT", "AccountHolder": "yalamanchi",},]
+    div(class= "container-fluid")
+        div(class = "row")  
+            each item, index in results  
+                div(class= "col-sm-2", onclick=`results(${index})`) AccountNumber:  #{item.AccountNumber}       
+                div(class= "col-sm-2", onclick=`results(${index})`) AccountType:  #{item.AccountType}   
+                div(class= "col-sm-2", onclick=`results(${index})`) AccountHolder:   #{item.AccountHolder}
